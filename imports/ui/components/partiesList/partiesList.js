@@ -3,6 +3,7 @@ import angularMeteor from 'angular-meteor';
 import template from './partiesList.html';
 import {Parties} from '../../../api/parties.js';
 import {name as partyAdd} from '../partyAdd/partyAdd';
+import {name as partyRemove} from '../partyRemove/partyRemove';
 import uiRouter from 'angular-ui-router';
 class PartiesList {
   constructor($scope, $reactive) {
@@ -17,9 +18,9 @@ class PartiesList {
     });
   }
   //bat su kien xoa 1 party
-  remove(party){
-    Parties.remove(party._id);
-  }
+  // remove(party){
+  //   Parties.remove(party._id);
+  // }
 }
 
 const name = 'partiesList';
@@ -27,7 +28,8 @@ const name = 'partiesList';
 // create a module
 export default angular.module(name, [
   angularMeteor,
-  partyAdd
+  partyAdd,
+  partyRemove
 ]).component(name, {
   templateUrl: 'imports/ui/components/partiesList/partiesList.html',
   controllerAs: name,
