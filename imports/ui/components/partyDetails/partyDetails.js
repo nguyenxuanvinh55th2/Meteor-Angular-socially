@@ -16,7 +16,7 @@ class PartyDetails {
       }
     });
   }
-  //thuc hien viec update party 
+  //thuc hien viec update party
   save() {
     Parties.update({
       _id: this.party._id
@@ -48,8 +48,6 @@ function config($stateProvider) {
 
  $stateProvider.state('partyDetails', {
    url: '/parties/:partyId',
-   templateUrl: 'imports/ui/components/partyDetails/partyDetails.html',
-   controllerAs: name,
-   controller: PartyDetails
+   template: '<party-details></party-details>'
  });
 }

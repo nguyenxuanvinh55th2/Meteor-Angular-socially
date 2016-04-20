@@ -39,8 +39,6 @@ function config($stateProvider){
   $stateProvider
     .state('parties', {
       url: '/parties',
-      templateUrl: 'imports/ui/components/partiesList/partiesList.html',
-      controllerAs: name,
-      controller: PartiesList
+      template: '<parties-list></parties-list>'
     });
 }
