@@ -1,6 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
+import {Meteor} from 'meteor/meteor';
 import './socially.html';
 import { name as partiesList } from '../partiesList/partiesList';
 import { name as navigation } from '../navigation/navigation';
@@ -15,17 +16,30 @@ export default angular.module(name, [
   uiRouter,
   partiesList,
   navigation,
-  partyDetails
+  partyDetails,
+  'accounts.ui'
 ]).component(name, {
   templateUrl: 'imports/ui/components/socially/socially.html',
   controllerAs: name,
   controller: Socially
 })
+  .config(config)
+  .run(run);
 //dinh nghia layout va set /parties la main layout
-.config(config);
 function config($locationProvider,$urlRouterProvider){
   'ngInject';
   $locationProvider.html5Mode(true);
 
   $urlRouterProvider.otherwise('/parties');
+}
+function run($rootScope, $state) {
+  'ngInject';
+
+  $rootScope.$on('$stateChangeError',function
+    (event, toState, toParams, fromState, fromParams, error){
+      if (error === 'AUTH_REQUIRED') {
+        $state.go('parties');
+      }
+    }
+  );
 }
