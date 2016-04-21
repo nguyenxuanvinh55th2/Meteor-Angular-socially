@@ -32,6 +32,7 @@ function config($locationProvider,$urlRouterProvider){
 
   $urlRouterProvider.otherwise('/parties');
 }
+//bắt lỗi trong định tuyến. nếu có lỗi nà AUTH_REQUIED thì nó sẽ định tuyến đến parties(trang home) của mình
 function run($rootScope, $state) {
   'ngInject';
 

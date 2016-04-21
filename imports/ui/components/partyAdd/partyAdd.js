@@ -2,7 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import {Meteor} from 'meteor/meteor';
 import './partyAdd.html';
-import {Parties} from '../../../api/parties.js';
+import {Parties} from '../../../api/parties/index.js';
 class  PartyAdd {
   constructor() {
     this.party={}

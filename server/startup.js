@@ -1,2 +1,3 @@
 import {Meteor} from 'meteor/meteor';
-import {Parties} from '../imports/api/parties.js';
+import {Parties} from '../imports/api/parties/index.js';
+import '../imports/api/users';

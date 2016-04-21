@@ -1,7 +1,7 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import template from './partiesList.html';
-import {Parties} from '../../../api/parties.js';
+import {Parties} from '../../../api/parties/index.js';
 import {name as partyAdd} from '../partyAdd/partyAdd';
 import {name as partyRemove} from '../partyRemove/partyRemove';
 import uiRouter from 'angular-ui-router';
@@ -10,7 +10,7 @@ class PartiesList {
     'ngInject';
 
     $reactive(this).attach($scope);
-
+    this.subscribe('parties');
     this.helpers({
       parties() {
         return Parties.find({});
