@@ -4,6 +4,7 @@ import template from './partiesList.html';
 import {Parties} from '../../../api/parties/index.js';
 import {name as partyAdd} from '../partyAdd/partyAdd';
 import {name as partyRemove} from '../partyRemove/partyRemove';
+import { name as PartyAddButton } from '../partyAddButton/partyAddButton';
 import uiRouter from 'angular-ui-router';
 class PartiesList {
   constructor($scope, $reactive) {
@@ -29,7 +30,8 @@ const name = 'partiesList';
 export default angular.module(name, [
   angularMeteor,
   partyAdd,
-  partyRemove
+  partyRemove,
+  PartyAddButton
 ]).component(name, {
   templateUrl: 'imports/ui/components/partiesList/partiesList.html',
   controllerAs: name,

@@ -11,6 +11,9 @@ class  PartyAdd {
     //console.log('submit',this.party);
     this.party.owner = Meteor.user()._id;
     Parties.insert(this.party);
+    if(this.done) {
+      this.done();
+    }
     this.reset();
   }
   reset() {
@@ -22,6 +25,9 @@ export default angular.module(name,[
   angularMeteor
 ]).component(name,{
   templateUrl:'imports/ui/components/partyAdd/partyAdd.html',
+  bindings: {
+   done: '&?'
+  },
   controllerAs:name,
   controller: PartyAdd
 });

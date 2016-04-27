@@ -22,3 +22,6 @@ dotansimha:accounts-ui-angular
 accounts-facebook
 accounts-twitter
 grigio:babel
+twbs:bootstrap
+less
+planettraining:material-design-icons
