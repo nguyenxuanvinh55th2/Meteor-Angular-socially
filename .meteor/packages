@@ -20,8 +20,10 @@ pbastowski:angular-babel
 accounts-password
 dotansimha:accounts-ui-angular
 accounts-facebook
-accounts-twitter
+accounts-google
 grigio:babel
 twbs:bootstrap
 less
+email
+nimble:restivus
 planettraining:material-design-icons
