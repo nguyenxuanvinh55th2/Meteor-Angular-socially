@@ -9,7 +9,7 @@ var Api = new Restivus({
       cryptr = new Cryptr('ntuquiz123');
 
 Api.addRoute('signup/:info', {authRequired: false}, {
-    get: function () {
+    get: function (toState) {
       var decryptedString = cryptr.decrypt(this.urlParams.info);
     //  console.log(decryptedString);
       var party = JSON.parse(decryptedString);
@@ -19,5 +19,8 @@ Api.addRoute('signup/:info', {authRequired: false}, {
           statusCode: 200,
           messages: decryptedString
         };
+
+         $state.go('parties');
+
     }
   });

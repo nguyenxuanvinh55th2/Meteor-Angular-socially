@@ -1,21 +1,22 @@
-<div layout="column" layout-padding>
-<party-add-button ></party-add-button>
-  <div flex>
-   <h2 class="md-display-1">List of the parties:</h2>
-  </div>
-  <div layout="column" layout-gt-sm="row">
-    <div flex="50">
-      <md-card ng-repeat="party in partiesList.parties">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline" ui-sref="partyDetails({ partyId: party._id })">
-              {{party.name}}
-              <party-remove party="party"></party-remove>
-            </span>
-            <span class="md-subhead">{{party.description}}</span>
-          </md-card-title-text>
-        </md-card-title>
-      </md-card>
+
+  <div layout="column" layout-padding>
+  <party-add-button ></party-add-button>
+    <div flex>
+     <h2 class="md-display-1">List of the parties:</h2>
+    </div>
+    <div layout="column" layout-gt-sm="row">
+      <div flex="50">
+        <md-card ng-repeat="party in partiesList.parties">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline" ui-sref="partyDetails({ partyId: party._id })">
+                {{party.name}}
+                <party-remove party="party"></party-remove>
+              </span>
+              <span class="md-subhead">{{party.description}}</span>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+      </div>
     </div>
   </div>
-</div>

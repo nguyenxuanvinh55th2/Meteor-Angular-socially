@@ -1,3 +1,21 @@
-<navigation></navigation>
+<md-toolbar layout="row" >
+      <navigation></navigation>
+    </md-toolbar>
 
-<div ui-view=""></div>
+    <!-- Container #2 -->
+    <div flex layout="row">
+
+        <!-- Container #3 -->
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+          <ul>
+            <li>Home</li>
+            <li>List</li>
+          </ul>
+        </md-sidenav>
+
+        <!-- Container #4 -->
+        <md-content flex id="content" ui-view="">
+
+        </md-content>
+
+    </div>

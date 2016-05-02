@@ -19,8 +19,6 @@ angular-templates
 pbastowski:angular-babel
 accounts-password
 dotansimha:accounts-ui-angular
-accounts-facebook
-accounts-google
 grigio:babel
 twbs:bootstrap
 less
@@ -29,3 +27,4 @@ nimble:restivus
 planettraining:material-design-icons
 meteorhacks:ssr
 blaze
+accounts-facebook
